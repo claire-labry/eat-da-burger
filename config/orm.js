@@ -37,7 +37,6 @@ var orm = {
             cb(res);
         });
 
-        selectAll();
     },
     
     insertOne(table, cols, vals, cb){
@@ -60,7 +59,6 @@ var orm = {
             cb(res);
         });
 
-        insertOne();
     },
 
     updateOne(table, objColVals, condition, cb){
@@ -78,6 +76,7 @@ var orm = {
             }
             cb(res);
         });
+
     },
 
     deleteOne(table, condition, cb){
@@ -92,6 +91,7 @@ var orm = {
 
             cb(res);
         });
+
     }
 };
 
