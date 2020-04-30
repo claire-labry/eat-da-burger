@@ -77,21 +77,6 @@ var orm = {
             cb(res);
         });
 
-    },
-
-    deleteOne(table, condition, cb){
-        var queryString = 'DELETE FROM ' + table;
-        queryString += ' WHERE ';
-        queryString += condition;
-
-        connection.query(queryString, function(err,res){
-            if(err){
-                throw err;
-            } 
-
-            cb(res);
-        });
-
     }
 };
 
