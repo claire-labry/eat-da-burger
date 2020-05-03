@@ -1,7 +1,20 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: url(../img/burger-background.jpg);
+  background-size: 100%;
+  font-family: 'Anton', sans-serif;
+  color: #032380;
+}
+
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+    background-color: thistle;
   }
   
   .label {
@@ -11,7 +24,6 @@ li {
   .create-update-form {
     padding: 5px;
     margin: 5px;
-    background: aqua;
   }
   
   .form-group {
