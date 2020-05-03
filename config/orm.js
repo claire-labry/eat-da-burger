@@ -18,7 +18,7 @@ function objToSql(ob){
 
         if(Object.hasOwnProperty.call(ob,key)){
             if (typeof value === 'string' && value.indexOf (' ')>= 0){
-                value = ' ' + value + ' ';
+                value = "'" + value + "'";
             }
             arr.push(key + '=' + value);
         }
@@ -28,18 +28,18 @@ function objToSql(ob){
 }
 
 var orm = {
-    selectAll(tableInput, cb){
+    all: function(tableInput, cb){
         var queryString = 'SELECT * FROM ' + tableInput + ';';
-        connection.query(queryString, function(err, res){
+        connection.query(queryString, function(err, result){
             if(err){
                 throw(err);
             }
-            cb(res);
+            cb(result);
         });
 
     },
     
-    insertOne(table, cols, vals, cb){
+    create: function(table, cols, vals, cb){
 
         var queryString = 'INSERT INTO ' + table;
 
@@ -52,16 +52,16 @@ var orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, vals, function(err, res){
+        connection.query(queryString, vals, function(err, result){
             if(err){
                 throw(err);
             }
-            cb(res);
+            cb(result);
         });
 
     },
 
-    updateOne(table, objColVals, condition, cb){
+    update: function(table, objColVals, condition, cb){
         var queryString = 'UPDATE ' + table;
 
         queryString += ' SET ';
@@ -70,13 +70,12 @@ var orm = {
         queryString += condition;
 
         console.log(queryString);
-        connection.query(queryString, function(err, res){
+        connection.query(queryString, function(err, result){
             if(err){
                 throw err;
             }
-            cb(res);
+            cb(result);
         });
-
     }
 };
 
