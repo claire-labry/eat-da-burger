@@ -1,29 +1,38 @@
-<h1>Eat-da-Burger!</h1>
+<div class="container">
+
+<div class="jumbotron">
+  <h1>BURGERZ!</h1>
+
+
+
 
 <h2>Burgers</h2>
 
 <ul>
     {{#each burgers}}
       {{#unless devoured}}
-        {{> burgers/burger-block devour=true}}
+      <span>{{this.id}} - {{this.burger_name}}</span>
+      <button type='button' class='eatburger btn btn-light' id='eatbutton' data-id='{{this.id}}' data-newDevoured={{devour}}>Devour it!</button>
       {{/unless}}
     {{/each}}  
 </ul>
 
 <h2>Devoured Burgers</h2>
-
 <ul>
     {{#each burgers}}
-        {{#if devoured}}
-        {{> burgers/burger-block devour=false}}
-        {{/if}}
-    {{/each}}
+      {{#if devoured}}
+      <span>{{this.id}} - {{this.burger_name}}</span>
+      {{/if}}
+    {{/each}}  
 </ul>
 
 <form class="create-form">
 <div class='form-group'>
-    <input type='text' id ='burgers' name= 'burger' placeholder='add your burger here...'>
+    <input type='text' id ='newburger' name= 'burger' placeholder='add your burger here...'>
 </div>
 
-<button type='submit'>Submit</button>
+<button type='submit' id='addburger'>Submit</button>
 </form>
+
+</div>
+</div>
