@@ -1,32 +1,49 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body{
-  background-image: url(../img/burger-background.jpg);
+img {
+  border-radius: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 250px;
+}
+
+.jumbotron {
+  margin-top: 50px;
+  background-color: #323743;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: #f27f3d;
   background-size: 100%;
-  font-family: 'Anton', sans-serif;
-  color: #032380;
+  font-family: 'Montserrat', sans-serif;
+  color: #b6e091;
 }
 
 li {
-    padding: 5px;
-    margin: 5px;
-    background-color: thistle;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
-  
+  padding: 5px;
+  margin: 5px;
+  list-style-type: none;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
